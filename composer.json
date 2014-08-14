@@ -1,0 +1,24 @@
+{
+    "name": "aop-io/php-aop",
+    "description": "Implements a simplified subset of AOP pragmatism and provides the AOP (Aspect Oriented Programming) features for PHP.",
+    "keywords": ["aop", "lib", "patch monkey", "ioc", "injection", "interceptor", "event"],
+    "license": "MIT",
+    "homepage": "http://aop.io",
+
+    "authors": [
+        {
+            "name": "Nicolas Tallefourtane",
+            "email": "dev@nicolab.net",
+            "homepage": "http://nicolab.net"
+        }
+    ],
+    "require": {
+      "php": ">=5.4"
+    },
+    "suggest": {
+        "aop-io/pecl-aop-interceptor": "Interceptor using the PECL AOP extension."
+    },
+    "autoload": {
+      "psr-0": {"Aop": "src/"}
+    }
+}
