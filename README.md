@@ -9,7 +9,7 @@ The PHP lib of AOP.io provides an abstraction layer easy to use for AOP developm
 The first interceptor implemented uses [PECL AOP-PHP extension](https://github.com/aop-io/pecl-aop-interceptor).
 
 Other interceptors are planned.
-If you want to create an interceptor, I can help you (email me) :smiley:
+If you want to create an interceptor, see the [skeleton](https://github.com/aop-io/skeleton-interceptor).
 
 
 ## Getting Started
@@ -27,7 +27,7 @@ If you want to create an interceptor, I can help you (email me) :smiley:
 use Aop\Aop;
 
 // Init
-$aop = new Aop();
+new Aop();
 
 function hello($name)
 {
@@ -35,7 +35,7 @@ function hello($name)
 }
 
 // Interception of kind 'around'
-$aop->addAround('hello()', function($joinPoint) {
+Aop::addAround('hello()', function($joinPoint) {
 
     // In this context,
     // $joinPoint is an instance of \Aop\JoinPoint\AroundFunctionJoinPoint
@@ -53,28 +53,10 @@ $aop->addAround('hello()', function($joinPoint) {
 echo hello('World !'); // Hello Nico !
 ```
 
-You can use statically:
 
-```php
-use Aop\Aop;
-
-// Init
-new Aop();
-
-Aop::addAround('hello()', function($jp) {
-
-    // change the return value
-    $jp->setReturnValue('Hello Nico !');
-
-    // Proceed the execution of the function
-    $jp->proceed();
-});
-
-echo hello('World !'); // Hello Nico !
-```
-
-  > The documentation is in progress ...
-
+  * [Documentation](http://aop.io)
+  * [API doc](http://aop.io/api/php/)
+  
 
 ## License
 
